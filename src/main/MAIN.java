@@ -3,7 +3,9 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,9 +20,7 @@ public class MAIN {
 	public static void main(String [] args) {
 		
 		GenParser parser = new GenParser();
-		
-		JLabel label = new JLabel();
-		
+				
 		window.setFocusable(true);
 		window.setVisible(true);
 		window.setSize(new Dimension(500,500));
@@ -29,15 +29,17 @@ public class MAIN {
 		
 		window.getContentPane().setBackground(Color.BLACK);
 		
-		parser.parse("C:\\Users\\priet\\GameDev-Workspace\\TerminNox\\src\\HTML\\index.html");
-		
-		System.out.println(parser.getSource());
-		
-		panel.setPreferredSize(new Dimension(10, 50));
+		panel.setPreferredSize(new Dimension(100, 100));
 		panel.setBackground(Color.pink);
 		
-		panel.add(label);
-		label.setText(parser.getSource());
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		
+		String fullPath = "C:\\Users\\priet\\GameDev-Workspace\\TerminNox\\src\\HTML\\index.html";
+		
+		String shortPath = "../HTML/test.html";
+		
+//		parser.sourceFile(shortPath);
+		parser.parse();
 		
 		window.add(panel);
 		window.pack();
