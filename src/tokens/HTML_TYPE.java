@@ -1,6 +1,7 @@
 package tokens;
 
 public enum HTML_TYPE {
-	TAG,
+	OPENING_TAG,
+	CLOSING_TAG,
 	PLAIN_TEXT
 }
